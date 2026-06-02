@@ -1,0 +1,16 @@
+.agents/
+.codex
+
+app.db
+backend/app.db
+backend/.env
+
+__pycache__/
+*.py[cod]
+.venv/
+backend/.venv/
+
+backend/uploads/originals/*
+backend/uploads/heatmaps/*
+!backend/uploads/originals/.gitkeep
+!backend/uploads/heatmaps/.gitkeep

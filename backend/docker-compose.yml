@@ -1,0 +1,16 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env
+    environment:
+      DATABASE_URL: sqlite:////data/app.db
+    volumes:
+      - ./uploads:/app/uploads
+      - ./trained_model:/app/trained_model
+      - ai_lung_scan_data:/data
+
+volumes:
+  ai_lung_scan_data:

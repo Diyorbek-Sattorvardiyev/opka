@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Register | AI Lung Scan</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Manrope:wght@600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-highest": "#e0e3e5",
+                        "primary": "#000000",
+                        "on-surface": "#191c1e",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "on-secondary-container": "#006172",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-tint": "#565e74",
+                        "tertiary-container": "#002113",
+                        "outline-variant": "#c6c6cd",
+                        "on-tertiary-fixed": "#002113",
+                        "surface-variant": "#e0e3e5",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-fixed": "#001f26",
+                        "inverse-surface": "#2d3133",
+                        "background": "#f7f9fb",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "surface-bright": "#f7f9fb",
+                        "error": "#ba1a1a",
+                        "surface-container-high": "#e6e8ea",
+                        "on-tertiary-container": "#009668",
+                        "inverse-on-surface": "#eff1f3",
+                        "outline": "#76777d",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "inverse-primary": "#bec6e0",
+                        "surface-container": "#eceef0",
+                        "on-primary-fixed": "#131b2e",
+                        "surface-dim": "#d8dadc",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "tertiary": "#000000",
+                        "secondary-fixed-dim": "#4cd7f6",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "secondary": "#00687a",
+                        "on-error": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#57dffe",
+                        "primary-container": "#131b2e",
+                        "surface": "#f7f9fb",
+                        "on-surface-variant": "#45464d",
+                        "on-primary-container": "#7c839b",
+                        "error-container": "#ffdad6",
+                        "primary-fixed": "#dae2fd",
+                        "secondary-fixed": "#acedff",
+                        "tertiary-fixed": "#6ffbbe",
+                        "primary-fixed-dim": "#bec6e0",
+                        "on-background": "#191c1e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin": "2rem",
+                        "xl": "3rem",
+                        "sm": "1rem",
+                        "xs": "0.5rem",
+                        "md": "1.5rem",
+                        "base": "4px",
+                        "lg": "2rem",
+                        "gutter": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Manrope"],
+                        "headline-md": ["Manrope"],
+                        "label-caps": ["Inter"],
+                        "body-md": ["Inter"],
+                        "title-sm": ["Manrope"],
+                        "body-sm": ["Inter"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "title-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .btn-gradient {
+            background: linear-gradient(to bottom, #131b2e 0%, #000000 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-background min-h-screen flex flex-col font-body-md text-on-surface">
+    <main class="flex-grow flex items-center justify-center p-gutter lg:p-xl">
+        <div
+            class="max-w-6xl w-full grid lg:grid-cols-2 bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0px_4px_12px_rgba(0,31,38,0.1)]">
+            <div class="hidden lg:block relative overflow-hidden">
+                <img class="absolute inset-0 w-full h-full object-cover"
+                    data-alt="A highly detailed, professional medical visualization showing a 3D translucent human torso with highlighted lungs. The aesthetic is clean-room clinical with a palette of deep navy blues, slate grays, and soft cyan glows. The lighting is sophisticated and directional, creating a sense of advanced diagnostic technology. The mood is precise, authoritative, and focused on medical innovation."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCraBArjcvvDzuXW-FugqqQTcEa4AcwP9iT1Niv78SK97O_zY2F15U58ytMLlqtec_lHLHvW-jCOPLsKQCy2tnRzamqPwJv_xFPG4pS4Feyrzd2YRFhKKL_dAtagkjZCcMMpFxrlPgMxgML5y6ZfWfwysvt4QWxng2XuaCSSXV3acDyUYog0TTXUoD5HdyOa6q8_ogeuTfxv6b4CiFQlFL3fMQzrxImxDGb2Oc3PMPXV1ekYj1UeDG9nlzEeNJwha3XfNFkWxRrqZ8" />
+                <div class="absolute inset-0 bg-primary/20 backdrop-blur-[2px]"></div>
+                <div class="absolute bottom-0 left-0 p-lg text-white z-10">
+                    <h2 class="font-display-lg text-display-lg mb-2">AI Lung Scan</h2>
+                    <p class="font-body-md opacity-90">O'pka rentgen tasvirlarini AI yordamida tezkor va tushunarli
+                        tahlil qilish.</p>
+                </div>
+            </div>
+            <div class="p-8 lg:p-xl flex flex-col justify-center">
+                <div class="mb-8">
+                    <h1 class="font-display-lg text-display-lg text-primary mb-2">Hisob yaratish</h1>
+                    <p class="font-body-md text-on-surface-variant">Tahlil terminalidan foydalanish uchun ro'yxatdan
+                        o'ting.</p>
+                </div>
+                <form class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex flex-col gap-2">
+                            <label class="font-label-caps text-label-caps text-primary uppercase">To'liq ism</label>
+                            <input
+                                class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:border-secondary focus:ring-1 focus:ring-secondary transition-all outline-none bg-surface-bright font-body-sm"
+                                placeholder="Ali Valiyev" type="text" />
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="font-label-caps text-label-caps text-primary uppercase">Tibbiy ID /
+                                litsenziya</label>
+                            <input
+                                class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:border-secondary focus:ring-1 focus:ring-secondary transition-all outline-none bg-surface-bright font-body-sm"
+                                placeholder="MD-882910" type="text" />
+                        </div>
+                    </div>
+                    <div class="flex flex-col gap-2">
+                        <label class="font-label-caps text-label-caps text-primary uppercase">Email manzil</label>
+                        <input
+                            class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:border-secondary focus:ring-1 focus:ring-secondary transition-all outline-none bg-surface-bright font-body-sm"
+                            placeholder="doctor@hospital.uz" type="email" />
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="flex flex-col gap-2">
+                            <label class="font-label-caps text-label-caps text-primary uppercase">Parol</label>
+                            <input
+                                class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:border-secondary focus:ring-1 focus:ring-secondary transition-all outline-none bg-surface-bright font-body-sm"
+                                placeholder="••••••••" type="password" />
+                        </div>
+                        <div class="flex flex-col gap-2">
+                            <label class="font-label-caps text-label-caps text-primary uppercase">Parolni
+                                tasdiqlash</label>
+                            <input
+                                class="w-full px-4 py-3 border border-outline-variant rounded-lg focus:border-secondary focus:ring-1 focus:ring-secondary transition-all outline-none bg-surface-bright font-body-sm"
+                                placeholder="••••••••" type="password" />
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3 py-2">
+                        <input class="mt-1 w-4 h-4 text-secondary border-outline-variant rounded focus:ring-secondary"
+                            id="terms" type="checkbox" />
+                        <label class="font-body-sm text-on-surface-variant" for="terms">
+                            Men <a class="text-secondary font-semibold hover:underline" href="#">foydalanish
+                                shartlari</a> va AI yordamchi tahlili bo'yicha <a class="text-secondary font-semibold hover:underline" href="#">tibbiy
+                                ogohlantirish</a> bilan tanishdim.
+                        </label>
+                    </div>
+                    <button
+                        class="w-full py-4 btn-gradient text-on-primary font-title-sm rounded-lg hover:shadow-lg active:scale-[0.98] transition-all flex justify-center items-center gap-2"
+                        type="submit">
+                        Ro'yxatdan o'tish
+                        <span class="material-symbols-outlined text-lg" data-icon="arrow_forward">arrow_forward</span>
+                    </button>
+                </form>
+                <div class="mt-8 text-center">
+                    <p class="font-body-sm text-on-surface-variant">
+                        Hisobingiz bormi?
+                        <a class="text-secondary font-bold hover:underline ml-1" href="login.html">Tizimga kiring</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer
+        class="w-full px-8 flex flex-col md:flex-row justify-between items-center gap-4 py-8 mt-auto border-t border-slate-200 bg-slate-50">
+        <div class="text-slate-400 font-manrope text-xs leading-relaxed">
+            © 2024 AI Lung Scan. Faqat yordamchi AI tahlil uchun.
+        </div>
+        <div class="flex gap-6">
+            <a class="font-manrope text-xs text-slate-500 hover:text-cyan-600 transition-colors" href="#">Tibbiy ogohlantirish</a>
+            <a class="font-manrope text-xs text-slate-500 hover:text-cyan-600 transition-colors" href="#">Maxfiylik siyosati</a>
+            <a class="font-manrope text-xs text-slate-500 hover:text-cyan-600 transition-colors" href="#">Foydalanish shartlari</a>
+        </div>
+    </footer>
+    <script src="api.js"></script>
+</body>
+
+</html>

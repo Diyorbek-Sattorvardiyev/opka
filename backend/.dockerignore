@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.env
+app.db
+uploads/*
+!uploads/originals/
+!uploads/heatmaps/

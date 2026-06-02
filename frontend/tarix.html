@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+
+<html class="light" lang="uz">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>AI Lung Scan - Tahlillar Tarixi</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-container": "#002113",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e0e3e5",
+                        "primary-fixed-dim": "#bec6e0",
+                        "secondary-container": "#57dffe",
+                        "surface-container-highest": "#e0e3e5",
+                        "inverse-primary": "#bec6e0",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#131b2e",
+                        "outline-variant": "#c6c6cd",
+                        "primary": "#000000",
+                        "surface-container": "#eceef0",
+                        "on-tertiary-container": "#009668",
+                        "surface-bright": "#f7f9fb",
+                        "on-secondary-fixed": "#001f26",
+                        "tertiary-fixed-dim": "#4edea3",
+                        "surface": "#f7f9fb",
+                        "on-background": "#191c1e",
+                        "on-tertiary-fixed-variant": "#005236",
+                        "secondary-fixed": "#acedff",
+                        "surface-dim": "#d8dadc",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#004e5c",
+                        "on-surface-variant": "#45464d",
+                        "tertiary-fixed": "#6ffbbe",
+                        "inverse-surface": "#2d3133",
+                        "on-surface": "#191c1e",
+                        "error-container": "#ffdad6",
+                        "secondary": "#00687a",
+                        "on-primary-container": "#7c839b",
+                        "outline": "#76777d",
+                        "on-tertiary-fixed": "#002113",
+                        "surface-container-low": "#f2f4f6",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#565e74",
+                        "background": "#f7f9fb",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-primary-fixed-variant": "#3f465c",
+                        "tertiary": "#000000",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#131b2e",
+                        "surface-container-high": "#e6e8ea",
+                        "primary-fixed": "#dae2fd",
+                        "on-secondary-container": "#006172",
+                        "on-primary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed-dim": "#4cd7f6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "lg": "2rem",
+                        "xs": "0.5rem",
+                        "xl": "3rem",
+                        "sm": "1rem",
+                        "gutter": "1.5rem",
+                        "base": "4px",
+                        "margin": "2rem",
+                        "md": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Manrope"],
+                        "title-sm": ["Manrope"],
+                        "body-md": ["Inter"],
+                        "body-sm": ["Inter"],
+                        "label-caps": ["Inter"],
+                        "headline-md": ["Manrope"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "title-sm": ["18px", { "lineHeight": "24px", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+
+        .diagnostic-card:hover {
+            box-shadow: 0px 8px 24px rgba(0, 31, 38, 0.15);
+        }
+    </style>
+</head>
+
+<body class="bg-background font-body-md text-on-surface">
+    <!-- TopAppBar -->
+    <header
+        class="fixed top-0 w-full z-50 flex justify-between items-center px-8 h-16 bg-white border-b border-slate-200 shadow-sm">
+        <div class="flex items-center gap-4">
+            <span class="text-xl font-extrabold text-slate-900 font-manrope tracking-tight">AI Lung Scan</span>
+        </div>
+        <div class="flex items-center gap-6">
+            <nav class="hidden md:flex gap-8 items-center">
+                <a class="text-slate-500 hover:text-cyan-500 transition-colors duration-200 font-manrope font-semibold tracking-tight"
+                    href="tahlil.html">Bosh sahifa</a>
+                <a class="text-cyan-600 font-bold font-manrope tracking-tight" href="tarix.html">Tarix</a>
+                <a class="text-slate-500 hover:text-cyan-500 transition-colors duration-200 font-manrope font-semibold tracking-tight"
+                    href="statistika.html">Statistika</a>
+            </nav>
+            <div class="flex gap-4">
+                <span class="material-symbols-outlined text-slate-900 cursor-pointer active:opacity-70"
+                    data-icon="account_circle">account_circle</span>
+                <span class="material-symbols-outlined text-slate-900 cursor-pointer active:opacity-70"
+                    data-icon="logout">logout</span>
+            </div>
+        </div>
+    </header>
+    <!-- SideNavBar (Hidden on small screens) -->
+    <aside
+        class="hidden lg:flex flex-col h-full pt-20 pb-4 fixed left-0 top-0 w-64 border-r border-slate-200 bg-slate-50 font-manrope text-sm font-medium z-40">
+        <div class="px-6 py-4 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-slate-200 overflow-hidden">
+                <img class="w-full h-full object-cover"
+                    data-alt="A professional portrait of a senior radiologist with a calm and confident expression, wearing clinical white attire in a brightly lit, modern medical facility. The background is softly blurred, showing high-tech medical monitors and a clean aesthetic. The lighting is natural and professional, emphasizing a clean-room medical environment with corporate minimalism."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBM12cWS4qVeKscT3uG4W1Oq5_lNp_5ypIU0nMb7SpixWRHa6YBQVGM10xaKCKL75xjvCG4B0RduLMhoY168mePjGwJxpFV-ClHu9oKb9qQ7FzNiXmySebth5mfvivv1mfx8XUimPkdOzoGTN0Sxd9Ryp0HhWDVgsX0JuTiIlf7wWq-jQW8-2OGjWobk4wHXVuMTVLb046jxWAGJnmSIfcDDPCp8-mREe-nFymbVEPtyL0Fj82f5Uh27d2QQNCF1Yj7etT0yewfCq0" />
+            </div>
+            <div>
+                <p class="text-slate-900 font-bold">Dr. Alisherov</p>
+                <p class="text-xs text-slate-500">Tahlil terminali</p>
+            </div>
+        </div>
+        <nav class="mt-4 flex-grow px-3">
+            <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-slate-100 transition-all mb-1"
+                href="tahlil.html">
+                <span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+                Bosh sahifa
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-slate-200 text-cyan-700 border-r-4 border-cyan-600 transition-all mb-1"
+                href="tarix.html">
+                <span class="material-symbols-outlined" data-icon="history">history</span>
+                Tarix
+            </a>
+            <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-slate-100 transition-all mb-1"
+                href="statistika.html">
+                <span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+                Statistika
+            </a>
+        </nav>
+        <div class="px-3 border-t border-slate-200 pt-4">
+            <a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-slate-100 transition-all"
+                href="tahlil.html">
+                <span class="material-symbols-outlined" data-icon="info">info</span>
+                Ma'lumot
+            </a>
+        </div>
+    </aside>
+    <!-- Main Content Area -->
+    <main class="ml-0 lg:ml-64 pt-24 px-8 pb-12 min-h-screen">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+                <div>
+                    <h1 class="font-display-lg text-display-lg text-primary mb-2">Tahlillar Tarixi</h1>
+                    <p class="text-on-surface-variant font-body-md">Barcha o'tkazilgan AI tahlillari va ularning
+                        natijalari</p>
+                </div>
+                <div class="flex flex-wrap gap-3">
+                    <div class="relative">
+                        <select
+                            class="appearance-none bg-white border border-slate-200 rounded-lg px-4 py-2 pr-10 text-body-sm font-medium focus:ring-2 focus:ring-secondary focus:outline-none transition-all">
+                            <option>Barcha statuslar</option>
+                            <option>Normal</option>
+                            <option>Pnevmoniya aniqlandi</option>
+                            <option>Kritik</option>
+                        </select>
+                        <span
+                            class="material-symbols-outlined absolute right-3 top-2 text-slate-400 pointer-events-none"
+                            data-icon="expand_more">expand_more</span>
+                    </div>
+                    <div class="flex items-center bg-white border border-slate-200 rounded-lg px-4 py-2">
+                        <span class="material-symbols-outlined text-slate-400 mr-2"
+                            data-icon="calendar_today">calendar_today</span>
+                        <input class="border-none p-0 text-body-sm focus:ring-0" placeholder="Sana oralig'i"
+                            type="text" />
+                    </div>
+                    <button
+                        data-action="filter-history"
+                        class="bg-secondary text-white px-4 py-2 rounded-lg text-body-sm font-semibold flex items-center gap-2 hover:opacity-90 transition-opacity">
+                        <span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+                        Filtrlash
+                    </button>
+                </div>
+            </div>
+            <!-- Analysis List Grid -->
+            <div class="grid grid-cols-1 gap-6">
+                <!-- History Item 1 -->
+                <div
+                    class="diagnostic-card bg-white rounded-xl p-4 border border-slate-200 transition-all flex flex-col md:flex-row items-center gap-6 shadow-sm">
+                    <div class="w-full md:w-32 h-32 bg-slate-900 rounded-lg overflow-hidden flex-shrink-0">
+                        <img class="w-full h-full object-cover opacity-80 hover:opacity-100 transition-opacity"
+                            data-alt="A high-contrast chest X-ray image displayed on a sleek, dark Slate-900 digital diagnostic viewer. The scan shows detailed lung structures with professional clinical lighting. Subtle AI overlays in Emerald Green highlight healthy lung tissue, maintaining a modern minimalist medical aesthetic. The image is crisp, focused, and representative of advanced radiological technology."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBr9zIaeaUJOmNzmbGKgjDZGaAKSGuKT4ZGcyyF5s1SrY-lweg7gr71RiRUgbaCJOG45mHOeR-VuzRNaO-hbxiYjMOQqRc131XtuuJL-7RMrvh7dkjEqeC5JU3PestOwZNgV7J1nTXXNcUzbLJ_bhmTglvidjC47sajee5iaHGZQOtaTGQQETboz1C-eKqPSc5DNScEqR_ZavpKx0MctnnUiwKGtbZNfdJTnp8VKIKZ5HO1ADDNFYpjcSByE8zhuGE1iEbuxzYfAMo" />
+                    </div>
+                    <div class="flex-grow grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
+                        <div>
+                            <p
+                                class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-wider mb-1">
+                                Bemor / ID</p>
+                            <p class="text-title-sm font-title-sm text-primary">Anvar Karimov</p>
+                            <p class="text-xs text-slate-500">ID: #8829-PX</p>
+                        </div>
+                        <div>
+                            <p
+                                class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-wider mb-1">
+                                Status</p>
+                            <span
+                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-tertiary-fixed text-on-tertiary-fixed-variant">
+                                Normal
+                            </span>
+                        </div>
+                        <div>
+                            <p
+                                class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-wider mb-1">
+                                Ishonch darajasi</p>
+                            <div class="flex items-center gap-2">
+                                <span class="text-title-sm font-title-sm text-primary">98.4%</span>
+                                <div class="w-16 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                                    <div class="h-full bg-cyan-600" style="width: 98%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p
+                                class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-wider mb-1">
+                                Sana</p>
+                            <p class="text-body-md font-body-md text-primary">12.05.2024</p>
+                            <p class="text-xs text-slate-500">14:30</p>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 w-full md:w-auto">
+                        <button
+                            data-action="show-static-detail"
+                            class="w-full md:w-auto border border-secondary text-secondary px-6 py-2.5 rounded-lg text-body-sm font-bold hover:bg-secondary hover:text-white transition-all">
+                            Batafsil ko'rish
+                        </button>
+                    </div>
+                </div>
+                <!-- History Item 2 -->
+                <div
+                    class="diagnostic-card bg-white rounded-xl p-4 border border-slate-200 transition-all flex flex-col md:flex-row items-center gap-6 shadow-sm">
+                    <div class="w-full md:w-32 h-32 bg-slate-900 rounded-lg overflow-hidden flex-shrink-0">
+                        <img class="w-full h-full object-cover opacity-80"
+                            data-alt="A specialized medical diagnostic X-ray of human lungs showing signs of abnormality. The image is presented within a dark Slate-900 interface. Subtle Red AI highlighting overlays indicate areas of diagnostic concern, specifically targeting pneumonia regions with low-opacity strokes. The visual style is clinical, high-stakes, and focused, employing a professional navy and slate color palette."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2APYMtdoku68F03TnScidpS_6mUfxM2klw2j6dNSm5rtZ5iJEgqQJndXEDvwlUnD9pFIWyoZd4GPGB-NpMivZ2VdBPQDCICaDwKLRw5Nt8JgisKkeFKmoWT3FIjOlG8YUpeDGiJPQoCHCZPyjIkT0UeT3SEu26eCqHIBc7d2TKvUOUYrCYelNps_tNI8HTrUTnyyxG3VuXB5zhuWEbQ8xLAzv3wxXo079pmM7eJNUdXlbjp8PeFRFsWEmhvzfKXME3rJHJtWtRRk" />
+                    </div>
+                    <div class="flex-grow grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
+                        <div>
+                            <p
+                                class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-wider mb-1">
+                                Bemor / ID</p>
+                            <p class="text-title-sm font-title-sm text-primary">Zulxumor Oripova</p>
+                            <p class="text-xs text-slate-500">ID: #9012-TR</p>
+                        </div>
+                        <div>
+                            <p
+                                class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-wider mb-1">
+                                Status</p>
+                            <span
+                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-error-container text-on-error-container">
+                                Pnevmoniya aniqlandi
+                            </span>
+                        </div>
+                        <div>
+                            <p
+                                class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-wider mb-1">
+                                Ishonch darajasi</p>
+                            <div class="flex items-center gap-2">
+                                <span class="text-title-sm font-title-sm text-primary">92.1%</span>
+                                <div class="w-16 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                                    <div class="h-full bg-error" style="width: 92%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p
+                                class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-wider mb-1">
+                                Sana</p>
+                            <p class="text-body-md font-body-md text-primary">11.05.2024</p>
+                            <p class="text-xs text-slate-500">09:15</p>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 w-full md:w-auto">
+                        <button
+                            data-action="show-static-detail"
+                            class="w-full md:w-auto border border-secondary text-secondary px-6 py-2.5 rounded-lg text-body-sm font-bold hover:bg-secondary hover:text-white transition-all">
+                            Batafsil ko'rish
+                        </button>
+                    </div>
+                </div>
+                <!-- History Item 3 -->
+                <div
+                    class="diagnostic-card bg-white rounded-xl p-4 border border-slate-200 transition-all flex flex-col md:flex-row items-center gap-6 shadow-sm">
+                    <div class="w-full md:w-32 h-32 bg-slate-900 rounded-lg overflow-hidden flex-shrink-0">
+                        <img class="w-full h-full object-cover opacity-80"
+                            data-alt="A clean, clear chest radiograph displaying a healthy lung profile. The image is set against a deep navy clinical background. Emerald green AI annotation lines softly trace the contours of the ribcage and lungs, indicating high-confidence normal findings. The aesthetic is clean-room medical, using a professional color palette of slate, white, and subtle cyan accents."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrSdtQswrqfeb9akitKvAWy_6fKVEgK1KSXkd0byuAvOEKs5da_jvFFnxvrwniMQ_UmcbJMnVCjgnMMnWpr3c6uHi-AMRXpX8VAa2qQT_HpPnCpm_PdMVkSyagEQ--AoWnIuhd4w5BDBXmQHqX3VQuEL3evywMuWg5x0GJTkQ6MXYWthdM317S9-CRP6FsxfAzMcYZFOYJ5V6Rbr1kayCDNvNPs_q7L0pDBTWAxgpRyf1fy0ZFMES80rY5m-fMRU18Yu9nnqaEElA" />
+                    </div>
+                    <div class="flex-grow grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
+                        <div>
+                            <p
+                                class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-wider mb-1">
+                                Bemor / ID</p>
+                            <p class="text-title-sm font-title-sm text-primary">Jasur Sobirov</p>
+                            <p class="text-xs text-slate-500">ID: #7741-MK</p>
+                        </div>
+                        <div>
+                            <p
+                                class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-wider mb-1">
+                                Status</p>
+                            <span
+                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-tertiary-fixed text-on-tertiary-fixed-variant">
+                                Normal
+                            </span>
+                        </div>
+                        <div>
+                            <p
+                                class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-wider mb-1">
+                                Ishonch darajasi</p>
+                            <div class="flex items-center gap-2">
+                                <span class="text-title-sm font-title-sm text-primary">89.5%</span>
+                                <div class="w-16 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                                    <div class="h-full bg-cyan-600" style="width: 89%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p
+                                class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-wider mb-1">
+                                Sana</p>
+                            <p class="text-body-md font-body-md text-primary">10.05.2024</p>
+                            <p class="text-xs text-slate-500">17:45</p>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 w-full md:w-auto">
+                        <button
+                            data-action="show-static-detail"
+                            class="w-full md:w-auto border border-secondary text-secondary px-6 py-2.5 rounded-lg text-body-sm font-bold hover:bg-secondary hover:text-white transition-all">
+                            Batafsil ko'rish
+                        </button>
+                    </div>
+                </div>
+                <!-- History Item 4 -->
+                <div
+                    class="diagnostic-card bg-white rounded-xl p-4 border border-slate-200 transition-all flex flex-col md:flex-row items-center gap-6 shadow-sm">
+                    <div class="w-full md:w-32 h-32 bg-slate-900 rounded-lg overflow-hidden flex-shrink-0">
+                        <img class="w-full h-full object-cover opacity-80"
+                            data-alt="Radiological imaging of a chest cavity with advanced AI-driven visual markers. The lighting is focused and technical, with a focus on maximizing image contrast within a Slate-900 container. The mood is precise and authoritative. The interface elements around it follow a corporate minimalist style with subtle navy shadows and crisp white card layouts."
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzIaO0wetohh6jgOoA_fc2cdHfil2sZJ6NK6zIC3kv11i72On2fE8IjASsSlCtzoJ-NKacA0g80TD0oFaia5UowpIZiDe6-6cjOJd1Cz680jkpzu8rcd5lMVfJxjkDwtEi6FoANfEUdx3L7dSBLgRPrFo2eTao1v0wFuWND3omHS17Nf_LG92B5kE6EpwXftAs0iTK6gLNlJBor18KgGdEW7RyPNX6SfPeRfjmUVt5WQzRl6WADIr5mmiW2QCS3xNwtJvvMcqC4Ps" />
+                    </div>
+                    <div class="flex-grow grid grid-cols-2 md:grid-cols-4 gap-4 w-full">
+                        <div>
+                            <p
+                                class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-wider mb-1">
+                                Bemor / ID</p>
+                            <p class="text-title-sm font-title-sm text-primary">Malika Shokirova</p>
+                            <p class="text-xs text-slate-500">ID: #1120-AS</p>
+                        </div>
+                        <div>
+                            <p
+                                class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-wider mb-1">
+                                Status</p>
+                            <span
+                                class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-error-container text-on-error-container">
+                                Pnevmoniya aniqlandi
+                            </span>
+                        </div>
+                        <div>
+                            <p
+                                class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-wider mb-1">
+                                Ishonch darajasi</p>
+                            <div class="flex items-center gap-2">
+                                <span class="text-title-sm font-title-sm text-primary">95.8%</span>
+                                <div class="w-16 h-1.5 bg-slate-100 rounded-full overflow-hidden">
+                                    <div class="h-full bg-error" style="width: 95%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <p
+                                class="text-label-caps font-label-caps text-on-surface-variant uppercase tracking-wider mb-1">
+                                Sana</p>
+                            <p class="text-body-md font-body-md text-primary">09.05.2024</p>
+                            <p class="text-xs text-slate-500">11:20</p>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 w-full md:w-auto">
+                        <button
+                            data-action="show-static-detail"
+                            class="w-full md:w-auto border border-secondary text-secondary px-6 py-2.5 rounded-lg text-body-sm font-bold hover:bg-secondary hover:text-white transition-all">
+                            Batafsil ko'rish
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Pagination -->
+            <div class="flex justify-center mt-12 gap-2">
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-400 hover:bg-slate-50 transition-colors">
+                    <span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+                </button>
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded-lg bg-secondary text-white font-bold">1</button>
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 transition-colors font-medium">2</button>
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-600 hover:bg-slate-50 transition-colors font-medium">3</button>
+                <button
+                    class="w-10 h-10 flex items-center justify-center rounded-lg border border-slate-200 text-slate-400 hover:bg-slate-50 transition-colors">
+                    <span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+                </button>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="w-full py-8 mt-auto border-t border-slate-200 bg-slate-50 px-8 flex flex-col md:flex-row justify-between items-center gap-4 ml-0 lg:ml-64">
+        <p class="font-manrope text-xs leading-relaxed text-slate-400">© 2024 AI Lung Scan. Faqat yordamchi AI tahlil uchun.</p>
+        <div class="flex gap-6">
+            <a class="font-manrope text-xs text-slate-500 hover:text-cyan-600 transition-colors duration-200"
+                href="#">Tibbiy ogohlantirish</a>
+            <a class="font-manrope text-xs text-slate-500 hover:text-cyan-600 transition-colors duration-200"
+                href="#">Maxfiylik siyosati</a>
+            <a class="font-manrope text-xs text-slate-500 hover:text-cyan-600 transition-colors duration-200"
+                href="#">Foydalanish shartlari</a>
+        </div>
+    </footer>
+    <script src="api.js"></script>
+</body>
+
+</html>
