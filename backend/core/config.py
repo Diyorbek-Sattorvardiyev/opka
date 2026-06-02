@@ -1,7 +1,8 @@
 from functools import lru_cache
 from pathlib import Path
+from secrets import token_urlsafe
 
-from pydantic import Field
+from pydantic import Field, model_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -14,7 +15,7 @@ class Settings(BaseSettings):
     environment: str = "development"
 
     database_url: str = f"sqlite:///{BASE_DIR / 'app.db'}"
-    jwt_secret_key: str = Field(..., min_length=32)
+    jwt_secret_key: str | None = Field(default=None, min_length=32)
     jwt_algorithm: str = "HS256"
     access_token_expire_minutes: int = 60 * 24
 
@@ -54,6 +55,15 @@ class Settings(BaseSettings):
         if parts and parts[0] == "backend":
             return BASE_DIR.parent / path
         return BASE_DIR / path
+
+    @model_validator(mode="after")
+    def ensure_jwt_secret_key(self) -> "Settings":
+        if self.jwt_secret_key:
+            return self
+        if self.environment.lower() == "production":
+            raise ValueError("JWT_SECRET_KEY is required when ENVIRONMENT=production")
+        self.jwt_secret_key = token_urlsafe(32)
+        return self
 
 
 @lru_cache
